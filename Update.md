@@ -1,8 +1,16 @@
-# PRONOTE 3.4.4
+# PRONOTE 3.5.0
+
+- Added a confirmation screen before a timetable QR changes anything.
+- Shows the number of detected Week A and Week B classes.
+- Lets you replace only Week A, only Week B, or both weeks.
+- Detects weeks that already match the installed timetable and disables pointless duplicate imports.
+- Rejects damaged timetable data and explains when a QR was created with an unsupported format version.
+- QR imports now preserve date-specific timetable changes and recurring lessons.
 
 - Fixed the PDF scanner dropping the first lesson of every day at the 8h00 timetable boundary.
 - The parser now uses the actual top and bottom edges of time labels instead of their center points.
 - Enabled AndroidX and Jetifier so the Google QR scanner dependencies compile correctly.
+- Restored the Android notification-permission imports after removing the camera permission flow.
 
 - Replaced the crashing embedded QR camera with Android's permissionless Google code scanner.
 - Removed PRONOTE's camera permission and obsolete QR capture activity.
