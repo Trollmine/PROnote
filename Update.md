@@ -1,10 +1,12 @@
-# PRONOTE 4.0.0 Preview 2
+# PRONOTE 4.0.0 Preview 4
 
-- Added real timetable synchronization through PRONOTE’s official real-time iCal feed.
-- Added paste and QR-scan setup for the private iCal link generated in PRONOTE.
-- Added a timetable preview with class count, date range and sample lessons before replacement.
-- Added automatic timetable synchronization whenever the app is opened.
-- Added secure on-device feed storage, removal controls and last synchronization time.
-- Imported dated classes, rooms, descriptions, cancellations and timetable gaps without sending the feed to Supabase.
-- Kept homework, grades and messages disabled until their separate readers are implemented.
-- Classes turn grey automatically after their end time; every class on a previous date is grey.
+- Added homework synchronization through the linked PRONOTE **Homework notebooks → Assignment** page.
+- Added detection of due dates, subjects, instructions, completion state, course/deposit links and attachment names.
+- Added a homework preview before any local assignment is replaced.
+- Added overwrite confirmation: imported PRONOTE homework replaces the current custom assignment list only after approval.
+- Added **Sync all once**, which runs the timetable capture followed by the homework capture.
+- Added the last successful homework synchronization time to the synchronization panel.
+- Kept Grades disabled for Preview 5 and Messages disabled for Preview 6.
+- Improved the linked-reader controls on narrow phone screens.
+- Fixed the Android build error caused by the updater bridge referencing a missing `BuildConfig` class.
+- The updater now reads the installed version through Android's package information instead.
