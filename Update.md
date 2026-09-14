@@ -1,9 +1,10 @@
-# PRONOTE 4.0.0 Preview 1
+# PRONOTE 4.0.0 Preview 2
 
-- Added the clean-room PRONOTE synchronization foundation.
-- Added an official ENT / ÉduConnect account-linking flow for Lycée Ferdinand Buisson.
-- PRONOTE credentials and session cookies remain in the Android app and are never sent to Supabase.
-- Added individual once/automatic controls for timetable, homework, grades and messages; all are off by default.
-- Added overwrite confirmations and editing locks for automatically synchronized timetable/homework data.
-- Added local session status, verification date and unlink controls.
-- Data readers remain disabled until their authenticated response formats have been safely validated.
+- Added real timetable synchronization through PRONOTE’s official real-time iCal feed.
+- Added paste and QR-scan setup for the private iCal link generated in PRONOTE.
+- Added a timetable preview with class count, date range and sample lessons before replacement.
+- Added automatic timetable synchronization whenever the app is opened.
+- Added secure on-device feed storage, removal controls and last synchronization time.
+- Imported dated classes, rooms, descriptions, cancellations and timetable gaps without sending the feed to Supabase.
+- Kept homework, grades and messages disabled until their separate readers are implemented.
+- Classes turn grey automatically after their end time; every class on a previous date is grey.
