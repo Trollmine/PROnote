@@ -1,4 +1,4 @@
-# PRONOTE 4.0.0-preview5
+# PRONOTE 4.0.0-preview5-fixed
 
 ## Preview 4 foundation
 
@@ -31,3 +31,10 @@
 - Makes assessment subjects and correction files downloadable when supplied by PRONOTE.
 - Keeps grade data read-only while automatic grade synchronization is enabled.
 - Message synchronization remains planned for Preview 6.
+
+## Preview 5 interface fix
+
+- Rebuilt the Grades drawer section to match PRONOTE with **My grades**, **Gradebook**, **Report card**, **Class's report card** and **Old report cards**.
+- Replaced the generic grading-period selector with PRONOTE’s left/right period arrows and expandable period list.
+- Added the matching PRONOTE-style empty result screen and school-box illustration.
+- Added smooth slide-open and arrow-rotation animations to both **Homework notebooks** and **Grades** drawer submenus.
