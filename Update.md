@@ -1,4 +1,4 @@
-# PRONOTE 4.0.0-preview5-fixed
+# PRONOTE 4.0.0-preview6
 
 ## Preview 4 foundation
 
@@ -30,7 +30,6 @@
 - Displays individual marks, special statuses, coefficients, dates and teacher comments.
 - Makes assessment subjects and correction files downloadable when supplied by PRONOTE.
 - Keeps grade data read-only while automatic grade synchronization is enabled.
-- Message synchronization remains planned for Preview 6.
 
 ## Preview 5 interface fix
 
@@ -38,3 +37,19 @@
 - Replaced the generic grading-period selector with PRONOTE’s left/right period arrows and expandable period list.
 - Added the matching PRONOTE-style empty result screen and school-box illustration.
 - Added smooth slide-open and arrow-rotation animations to both **Homework notebooks** and **Grades** drawer submenus.
+- Corrected the empty-grade illustration using the supplied PRONOTE-style artwork.
+- Made the period selector always open, including before any grades are synchronized.
+- Fixed the four period labels to **Trimestre 1**, **Trimestre 2**, **Trimestre 3** and **Hors période**.
+
+## Preview 6
+
+- Added direct read-only synchronization of PRONOTE discussions through the linked Pawnote session.
+- Added independent **Sync once** and **Auto sync** controls for messages.
+- Added a discussion preview and confirmation before replacing the local offline message cache.
+- Added a real animated **Communication** drawer section with a functional **Discussions** page.
+- Added searchable **All** and **Unread** discussion views with subjects, participants, dates and unread counters.
+- Added full offline thread viewing with normalized message text.
+- Added downloadable message attachments through Android's download manager.
+- Limited each refresh to the 30 newest discussions so automatic synchronization stays responsive.
+- Synchronization deliberately does not mark messages as read and cannot send, edit or delete real PRONOTE messages.
+- Added last-message-sync status to the synchronization panel.
