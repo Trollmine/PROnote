@@ -1,6 +1,35 @@
-# PRONOTE 4.0.0 — Complete release notes
+# PRONOTE 4.2.0
 
-## Stable
+## 4.2.0 — Self
+
+- Added **Self** to Secret Tools with Monday–Friday cafeteria menus from the linked PRONOTE/ENT session.
+- Added week navigation, separate lunch/dinner sections and offline cafeteria-menu storage.
+- Cafeteria synchronization checks every eligible student resource instead of depending on the resource active after login.
+- Rebuilt Communication installation as an explicit, verified cache transaction.
+- Information & Surveys are deduplicated, tracked explicitly and read back from storage; the app no longer reports success if detected items were not actually saved.
+- If long discussion histories approach Android WebView’s storage limit, older message bodies are compacted before retrying so Information & Surveys still import successfully.
+- Reset the Information & Surveys unread-only filter after an import so newly installed read items remain visible.
+- Homework synchronization now removes the previous PRONOTE layer before importing the current remote list.
+- Migrates and removes legacy synchronized homework entries that lacked a source marker, preventing repeated imports from creating duplicates.
+- Preserves genuinely custom homework while deduplicating the new PRONOTE set by its remote identifier.
+- Updated Android to version **4.2.0**, `versionCode 56`.
+- Replaced the Notebook’s placeholder missed-hours and tardiness symbols with the supplied PRONOTE-style clock and running-student icons.
+
+## 4.1.0 — Student Administration
+
+- Added direct Student Administration synchronization through the linked PRONOTE session.
+- Added independent one-time and automatic synchronization controls for Student Administration.
+- Added the real PRONOTE-style Notebook overview and detail pages for absences, tardiness, punishments, observations and precautionary measures.
+- Added justified-state, reason, duration, subject and date details when supplied by the school.
+- Added downloadable documents attached to punishments and precautionary measures.
+- Added Student Administration to **Sync all once**, last-sync reporting and the animated drawer navigation.
+- Completed the English and French interface for the new pages.
+- Rebuilt the notification panel to match the supplied full-height PRONOTE overlay instead of the incorrect compressed bottom sheet.
+- Fixed Communication synchronization so Information & Surveys establishes presence, checks every eligible student resource, and retries false empty responses before discussion threads are downloaded.
+- Enabling any automatic synchronization switch now performs its first synchronization immediately instead of waiting for a later app launch or timer.
+- Updated the Android release to version **4.1.0**, `versionCode 55`.
+
+## 4.0.0 Stable
 
 - Rebuilt Communication to closely match the supplied PRONOTE recording.
 - Added the complete Communication navigation: Discussions, Information & Surveys, My meetings, Agenda and Menu.
@@ -10,7 +39,6 @@
 - Added the school-holiday Agenda and synchronized cafeteria menus.
 - Added the PRONOTE-style notification panel and empty states.
 - Rebuilt Discussions and Information & Surveys to closely follow the real PRONOTE mobile list and thread layouts.
-- Fixed Information & Surveys synchronization so failures are retried and reported instead of silently producing an empty list.
 - Removed the unwanted 20:00–07:00 message-reception banner from every Communication page.
 - Replaced the fixed notification number with the real combined unread Communication count.
 - Opening a discussion or information item now marks it read locally and on PRONOTE.
@@ -18,7 +46,7 @@
 - Added automatic key revalidation on connected launches and whenever connectivity returns.
 - Finished and polished the English/French translations across synchronization, grades and Communication.
 - Kept synchronized categories read-only while their automatic synchronization is enabled.
-- Updated the final Android release to version **4.0.0**, `versionCode 52`.
+- Released the final Android V4 build as version **4.0.0**, `versionCode 51`.
 
 ## Preview 6
 
