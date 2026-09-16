@@ -1,55 +1,79 @@
-# PRONOTE 4.0.0-preview6
+# PRONOTE 4.0.0 — Complete release notes
 
-## Preview 4 foundation
+## Stable
 
-- Replaced the manual PRONOTE page reader with direct synchronization powered by Pawnote LTS.
-- Added one-tap account linking through the school’s normal PRONOTE / ENT sign-in page.
-- Automatically detects PRONOTE’s temporary mobile token after login and exchanges it for a renewable session.
-- Added the one-time PRONOTE device security-code step when required by the server.
-- Kept account QR scanning and direct credentials as collapsed troubleshooting fallbacks.
-- Stores the renewable PRONOTE session encrypted with Android Keystore; the password is never retained.
-- Added direct timetable and homework synchronization without navigating through official PRONOTE pages.
-- Added previews and overwrite confirmations before manually installing synchronized data.
-- Added independent automatic synchronization and read-only protection for synchronized categories.
-- Preserved custom homework while automatic synchronization temporarily hides it.
-- Cleans HTML from homework descriptions and makes synchronized attachments downloadable.
-- Makes every relink clear the old embedded session and restart through the school ENT.
-- Routed Pawnote requests through Android networking so required cookies and response headers are preserved.
-- Added Android build-code comparison so corrected builds of the same preview are detected by the updater.
-- Included the Pawnote LTS GPL licence and attribution in the project.
-
-## Preview 5
-
-- Added direct grade synchronization for every grading period available on the linked PRONOTE account.
-- Added independent **Sync once** and **Auto sync** controls for grades.
-- Added a grade preview and confirmation step before manually replacing synchronized grade data.
-- Added a real **Grades** page accessible from the side menu.
-- Added offline storage and a grading-period selector for synchronized results.
-- Displays the student’s overall average and the class average when PRONOTE provides them.
-- Displays subject averages together with class, lowest and highest averages.
-- Displays individual marks, special statuses, coefficients, dates and teacher comments.
-- Makes assessment subjects and correction files downloadable when supplied by PRONOTE.
-- Keeps grade data read-only while automatic grade synchronization is enabled.
-
-## Preview 5 interface fix
-
-- Rebuilt the Grades drawer section to match PRONOTE with **My grades**, **Gradebook**, **Report card**, **Class's report card** and **Old report cards**.
-- Replaced the generic grading-period selector with PRONOTE’s left/right period arrows and expandable period list.
-- Added the matching PRONOTE-style empty result screen and school-box illustration.
-- Added smooth slide-open and arrow-rotation animations to both **Homework notebooks** and **Grades** drawer submenus.
-- Corrected the empty-grade illustration using the supplied PRONOTE-style artwork.
-- Made the period selector always open, including before any grades are synchronized.
-- Fixed the four period labels to **Trimestre 1**, **Trimestre 2**, **Trimestre 3** and **Hors période**.
+- Rebuilt Communication to closely match the supplied PRONOTE recording.
+- Added the complete Communication navigation: Discussions, Information & Surveys, My meetings, Agenda and Menu.
+- Added discussion search, unread and open/closed filters, offline thread access and downloadable attachments.
+- Added recipient lookup and new-discussion sending to teachers and other authorized school personnel.
+- Added synchronized Information & Surveys with search, unread state, detail pages and attachments.
+- Added the school-holiday Agenda and synchronized cafeteria menus.
+- Added the PRONOTE-style notification panel and empty states.
+- Rebuilt Discussions and Information & Surveys to closely follow the real PRONOTE mobile list and thread layouts.
+- Fixed Information & Surveys synchronization so failures are retried and reported instead of silently producing an empty list.
+- Removed the unwanted 20:00–07:00 message-reception banner from every Communication page.
+- Replaced the fixed notification number with the real combined unread Communication count.
+- Opening a discussion or information item now marks it read locally and on PRONOTE.
+- Strengthened offline mode: the first key activation still requires internet, but a previously verified installation can subsequently open offline.
+- Added automatic key revalidation on connected launches and whenever connectivity returns.
+- Finished and polished the English/French translations across synchronization, grades and Communication.
+- Kept synchronized categories read-only while their automatic synchronization is enabled.
+- Updated the final Android release to version **4.0.0**, `versionCode 52`.
 
 ## Preview 6
 
-- Added direct read-only synchronization of PRONOTE discussions through the linked Pawnote session.
-- Added independent **Sync once** and **Auto sync** controls for messages.
-- Added a discussion preview and confirmation before replacing the local offline message cache.
-- Added a real animated **Communication** drawer section with a functional **Discussions** page.
-- Added searchable **All** and **Unread** discussion views with subjects, participants, dates and unread counters.
-- Added full offline thread viewing with normalized message text.
-- Added downloadable message attachments through Android's download manager.
-- Limited each refresh to the 30 newest discussions so automatic synchronization stays responsive.
-- Synchronization deliberately does not mark messages as read and cannot send, edit or delete real PRONOTE messages.
-- Added last-message-sync status to the synchronization panel.
+- Added real PRONOTE message synchronization.
+- Added the first functional Communication page and its drawer navigation.
+- Added synchronized teacher discussions, message threads, dates and unread states.
+- Added offline caching for previously synchronized conversations.
+- Added support for viewing and downloading files attached to messages.
+- Added the animated drawer expansion used by sections such as Homework notebooks and Communication.
+
+## Preview 5
+
+- Added real PRONOTE grade synchronization.
+- Added a complete Grades area with My grades, Gradebook, Report card, Class's report card and Old report cards.
+- Added grading periods, subject averages, class averages, marks, coefficients and comments.
+- Added downloadable assessment and correction files when supplied by PRONOTE.
+- Reworked the grade pages to match the supplied mobile PRONOTE references.
+- Added the PRONOTE-style period menu, which remains accessible even when periods contain no grades.
+- Added the supplied school-box illustration and polished empty-period screens.
+
+## Preview 4
+
+- Added real PRONOTE homework synchronization.
+- Added independent one-time and automatic homework synchronization settings.
+- Synchronized subjects, due dates, completion state, instructions and downloadable homework files.
+- Normalized PRONOTE HTML homework text so tags such as `<div>` no longer appear in assignments.
+- Added direct attachment downloading from synchronized homework.
+- Automatic homework synchronization now hides the built-in demonstration homework and restores it when synchronization is disabled.
+- Improved account linking through the school's normal PRONOTE/ENT sign-in flow.
+- Fixed relinking so logging out and linking again restarts the ENT login instead of falling back to an unwanted PRONOTE login page.
+- Stored renewable PRONOTE sessions securely using Android Keystore without saving the account password.
+
+## Preview 3
+
+- Added automatic timetable synchronization using Android background work.
+- Added an independent timetable auto-sync switch, disabled by default.
+- Added periodic refreshes while preserving the last successfully synchronized timetable for offline use.
+- Made synchronized timetable data read-only while automatic synchronization is enabled.
+- Added account-session renewal for background synchronization.
+
+## Preview 2
+
+- Added one-time timetable synchronization from a linked PRONOTE account.
+- Synchronized courses, teachers, rooms, groups, cancellations and exceptional timetable changes.
+- Added a timetable preview and overwrite warning before installing synchronized data.
+- Added automatic Lunch and No course gaps while ensuring Wednesday never receives an artificial lunch period.
+- Added gray styling for classes that already happened on the current day.
+- Kept PDF import and timetable QR transfer available as optional alternatives.
+
+## Preview 1
+
+- Added the Synchronization section to the secret settings tab.
+- Added optional PRONOTE account linking; the app remains fully usable without a real PRONOTE account.
+- Added the foundation for direct synchronization using Pawnote LTS as an independent connector without copying Papillon application code.
+- Added separate one-time and automatic switches for timetable, homework, grades and Communication, all disabled by default.
+- Added overwrite warnings explaining that synchronized categories replace their custom equivalents.
+- Added encrypted renewable-session storage and account unlinking controls.
+- Added the first synchronization status, last-update and error displays.
