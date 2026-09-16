@@ -1,4 +1,19 @@
-# PRONOTE 4.2.0
+# PRONOTE 4.2.1
+
+## 4.2.1 — Synchronization fixes
+
+- Homework synchronization now deletes every existing homework entry before installing the current PRONOTE list, eliminating accumulated duplicates and obsolete local entries.
+- Replaced the Information & Surveys reader with Pawnote's direct News request used by Papillon; removed the incorrect resource switching and Presence-page navigation that could return a false empty list.
+- Information and survey payloads are both mapped explicitly, including questions, response choices, text, categories, authors and attachments.
+- Replaced cafeteria resource probing with Pawnote's direct weekly Menu request used by Papillon.
+- Added one fresh authenticated retry when PRONOTE unexpectedly returns an empty News or Menu response.
+- Updated Android to version **4.2.1**, `versionCode 57`.
+- Self now prefers PRONOTE menus, then falls back to a configurable public school menu page or PDF.
+- Added a built-in fallback for Lycée Polyvalent Ferdinand Buisson and parses its weekly PDF into dated **Lunch** and **Night meal** tabs.
+- Cafeteria PDFs are parsed locally on the phone; their contents are never uploaded.
+- Removed all timetable, homework and profile uploads from the licence API and added a migration that permanently drops `public.license_assignments`.
+- Fixed relinking so it clears only PRONOTE/ENT cookies instead of erasing the app's entire local storage.
+- Mirrored the verified licence state and student name/photo into Android native storage so they survive phone restarts and WebView storage recovery.
 
 ## 4.2.0 — Self
 
