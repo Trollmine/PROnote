@@ -1,3 +1,15 @@
+# PRONOTE 4.4.1
+
+## 4.4.1 — Homepage fidelity fixes
+
+- Rebuilt the Homepage proportions, typography, section spacing, date controls, timetable rows, assignment controls, pale background motifs and INDEX ÉDUCATION footer against the supplied PRONOTE screenshots.
+- Removed the non-PRONOTE **Homepage** entry from the side drawer. The white house button is now the only homepage shortcut.
+- Changed the yellow **Reminder** panel from an automatic assignment summary into a personal editable reminder stored only on the device.
+- Added the PRONOTE-style Today/Tomorrow navigator and Week A/B label to the homepage timetable preview.
+- Homepage assignments now include completion state, the **I finished** checkbox and deposit action when available.
+- Preserved the 4.4.0 launch update prompt, serialized background refresh and course/new-grade notifications.
+- Updated Android to version **4.4.1**, `versionCode 62`.
+
 # PRONOTE 4.4.0
 
 ## 4.4.0 — Homepage, background alerts and update prompt
