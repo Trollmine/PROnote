@@ -1,3 +1,17 @@
+# PRONOTE 4.4.0
+
+## 4.4.0 — Homepage, background alerts and update prompt
+
+- Added the PRONOTE-style Homepage from the supplied mobile recording, with the reminder banner, school portal card, upcoming assignments, today's timetable, latest grades, correspondence notebook and agenda.
+- Homepage cards use the existing offline caches and link to their full screens; no duplicate data store or hardcoded school results were introduced.
+- Added a quiet launch-time update check. The update dialog opens automatically only when GitHub advertises a newer version/build; offline failures stay in debug logs and never interrupt launch.
+- Added periodic timetable and grade checks every 15 minutes while the app process is active, plus immediate checks after resume and reconnection.
+- Background checks reuse the existing serialized renewable-session pipeline, retry/backoff behavior and transactional cache installation, preventing duplicate or competing sync sessions.
+- Added stable change baselines: the first successful check is silent, later checks notify only for a real course payload difference or a previously unseen grade ID.
+- Added Android notifications and an in-app notification count for course changes and new grades, with a dedicated notification channel and a user-facing on/off setting.
+- Background timetable checks always target the current school week rather than whichever historical/future date is open in the timetable UI.
+- Updated Android to version **4.4.0**, `versionCode 61`.
+
 # PRONOTE 4.3.0
 
 ## 4.3.0 — Performance, synchronization reliability and QoL
