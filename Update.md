@@ -1,3 +1,17 @@
+# PRONOTE 4.4.2
+
+## 4.4.2 — Final V4 synchronization polish
+
+- Added pull-to-refresh to Homepage, Homework, Grades and Communication using the existing serialized synchronization pipeline.
+- Added consistent last-successful-sync information, category progress messages and direct Retry actions while keeping cached content visible.
+- Grade, timetable and homework notification taps now open their relevant screen or date, including from a closed app.
+- Grouped related Android grade and timetable notifications without removing useful individual entries.
+- Startup displays cached content immediately and starts the existing background check asynchronously when the WebView becomes idle.
+- Fixed QR timetable replacement being hidden by higher-priority synchronized date entries; conflicting PRONOTE overrides are removed while custom dates remain intact.
+- Fixed PRONOTE timetable replacement feedback and navigation, with cached timetable preservation if installation fails.
+- Centralized the few new reusable synchronization presentation colors for later theme overrides without introducing a V5 redesign.
+- Updated Android to version **4.4.2**, `versionCode 63`.
+
 # PRONOTE 4.4.1
 
 ## 4.4.1 — Homepage fidelity fixes
