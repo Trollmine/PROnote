@@ -1,3 +1,16 @@
+# Scoly 5.0.0
+
+## 5.0.0 — PROnote becomes Scoly
+
+- Introduced the new **Scoly** identity, app icon, launcher presentation and user-facing application name while preserving the Android package and data identifiers for seamless upgrades.
+- Added the new default Scoly interface with shared coral, violet, surface, typography, spacing, shape and elevation tokens across the major existing screens.
+- Added **Scoly Light**, **Scoly Dark** and **Follow system** modes with live switching that does not reload synchronized data.
+- Preserved the complete V4 presentation as **PROnote Classic**, backed by the same navigation, synchronization, cache and page logic.
+- Redesigned the Homepage around next course, timetable changes, upcoming homework, latest grades, unread Communication and cafeteria information using existing offline stores and deep links.
+- Added a one-time upgrade introduction for existing users; new installations start in Scoly without the migration prompt.
+- Preserved activation, linked PRONOTE accounts, cached/custom data, settings, offline mode, background synchronization, updater and notifications.
+- Updated Android to version **5.0.0**, `versionCode 64`.
+
 # PRONOTE 4.4.2
 
 ## 4.4.2 — Final V4 synchronization polish
