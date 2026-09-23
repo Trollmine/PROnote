@@ -1,3 +1,36 @@
+# Scoly 5.0.5
+
+## 5.0.5 — Secret options and synchronization polish
+
+- Secret option buttons stay disabled for two seconds after the dialog opens, preventing the opening gesture from activating an option accidentally.
+- Added a **Secret options** drawer tab in Scoly mode while keeping the PROnote Classic drawer unchanged.
+- Added consistent inner padding around the PRONOTE sync-settings frame, rows, heading and notification controls.
+- Updated Android to version **5.0.5**, `versionCode 69`.
+
+## 5.0.4 — Timetable replacement and Homepage schedule
+
+- Fixed the actual no-op cause: replacement completed its storage writes and then called a removed cloud-sync function, throwing before the UI could refresh or close.
+- Made PDF replacement a real form submission backed directly by the existing verified, all-or-nothing timetable transaction.
+- Made PRONOTE replacement close the synchronization dialog and open the newly installed week immediately; expired previews now show a visible error instead of doing nothing.
+- Published the canonical timetable store before the rest of timetable UI initialization so Homepage day cards can always read the same courses as Timetable.
+- Kept the previous timetable intact if replacement storage verification fails.
+- Updated Android to version **5.0.4**, `versionCode 68`.
+
+## 5.0.3 — Homepage timetable reliability
+
+- Homepage day overview and **Your school day** now read through the same canonical timetable-store function used by the Timetable page.
+- Empty or partial PRONOTE responses for an active school week are retried once and then rejected instead of erasing cached courses; genuine full holiday weeks remain valid.
+- Centered the assignment completion checkmark with a fixed SVG mark inside the existing Scoly checkbox.
+- Updated Android to version **5.0.3**, `versionCode 67`.
+
+# Scoly 5.0.2
+
+## 5.0.2 — Portable Android signing
+
+- Bundled the existing Scoly/PROnote signing keystore inside the Android project so the source ZIP can be built on a phone or another computer without a separate PC key file.
+- Replaced the hardcoded Windows keystore path with a portable project-relative path while preserving the existing signing identity and Android update compatibility.
+- Updated Android to version **5.0.2**, `versionCode 66`.
+
 # Scoly 5.0.1
 
 ## 5.0.1 — V5 reliability and interface polish
@@ -7,6 +40,10 @@
 - Sync All now reports failed categories clearly, preserves their cached data and safely keeps successful category results.
 - Timetable replacement now erases every previous dated, repeating and imported timetable entry before installing only the newly imported or synchronized timetable, with transactional rollback if storage fails.
 - Corrected Android adaptive-icon safe-zone padding without changing the supplied Scoly artwork.
+- Corrected the Scoly Homepage hierarchy, dark-mode text, View all placement, assignment status/check controls, day selector and course spacing.
+- Homepage and Menu cafeteria views now reuse PDF-imported meals from the existing Self cache instead of reading only PRONOTE Communication menus.
+- Removed the non-PRONOTE Appearance entry from the PROnote Classic drawer while keeping Appearance available through Secret tools.
+- Fixed Scoly timetable time clipping, removed the mismatched inner date-selector outline and aligned Secret tools with the active Scoly theme.
 - Updated Android to version **5.0.1**, `versionCode 65`.
 
 # Scoly 5.0.0
