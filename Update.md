@@ -1,3 +1,14 @@
+# Scoly 5.0.1
+
+## 5.0.1 — V5 reliability and interface polish
+
+- Fixed shared Scoly Light/Dark surface and text contrast across PDF export, synchronization overlays, dialogs and narrow phone layouts while leaving PROnote Classic unchanged.
+- Fixed Communication synchronization reusing an invalidated session after an empty Information & Surveys response.
+- Sync All now reports failed categories clearly, preserves their cached data and safely keeps successful category results.
+- Timetable replacement now erases every previous dated, repeating and imported timetable entry before installing only the newly imported or synchronized timetable, with transactional rollback if storage fails.
+- Corrected Android adaptive-icon safe-zone padding without changing the supplied Scoly artwork.
+- Updated Android to version **5.0.1**, `versionCode 65`.
+
 # Scoly 5.0.0
 
 ## 5.0.0 — PROnote becomes Scoly
