@@ -1,3 +1,33 @@
+# Scoly 5.2.4
+
+## 5.2.4 — User-controlled profile pictures
+
+- Removed profile-picture downloading from PRONOTE synchronization after repeated server-specific failures.
+- PRONOTE profile synchronization now updates only the student name, class and school.
+- A manually selected picture is never replaced, cleared or reset by automatic, manual or background synchronization.
+- Kept the generic Scoly icon only as the fallback when the user has not selected a picture.
+- Completed the agreed V5.2.x scope without adding Groups/shared Todo or exposing Scoly Todo in PROnote Classic.
+- Updated Android to version **5.2.4**, `versionCode 85`.
+
+# Scoly 5.2.3
+
+## 5.2.3 — Timetable, profile picture and privacy fixes
+
+- Synchronized PRONOTE timetables now keep both Week A and Week B as the repeating schedule after the exact downloaded dates.
+- Profile-picture synchronization now resolves relative PRONOTE file URLs and uses the same signed-file request behavior as compatible open-source clients, with a fallback for older servers.
+- The ENT/ALISE sign-in page now sizes itself from the real available viewport and remains scrollable above phone navigation areas.
+- Removed the bundled personal avatar, personal profile defaults and sample class timetable; fresh installs now start with generic empty local data.
+- Updated Android to version **5.2.3**, `versionCode 84`.
+
+# Scoly 5.2.2
+
+## 5.2.2 — Weekly timetable and account linking polish
+
+- Restyled the Scoly weekly timetable with themed controls, rounded day columns, readable dark-mode lesson cards and a clear current-day state; PROnote Classic keeps its familiar layout.
+- Restored the PROnote Classic drawer’s **Switch accounts** action without changing Scoly’s parent-only multiple-account entry.
+- Made the PRONOTE account type visible before opening the official ENT login, preventing parent credentials from being sent to the student space.
+- Updated Android to version **5.2.2**, `versionCode 83`.
+
 # Scoly 5.2.1
 
 ## 5.2.1 — Profile and French interface fixes
