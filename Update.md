@@ -1,3 +1,15 @@
+# Scoly 5.2.5
+
+## 5.2.5 — My School Day completion
+
+- Added fully local personal school events with optional subjects, descriptions, times and reminders.
+- Added date-based Things to Bring with multiple items per day, packed state, prominent Homepage summaries and automatic expiry.
+- Unified personal Todo, events and Things to Bring on the Scoly Homepage without changing synchronized PRONOTE homework.
+- Added event notification deep links, duplicate-safe rescheduling and alarm restoration after a device restart or app update.
+- Prevented profile synchronization from replacing a locally selected picture, including linked-account refreshes.
+- Fixed the embedded ENT/ALISE sign-in page so its full form remains scrollable on different phone sizes.
+- Updated Android to version **5.2.5**, `versionCode 86`.
+
 # Scoly 5.2.4
 
 ## 5.2.4 — User-controlled profile pictures
