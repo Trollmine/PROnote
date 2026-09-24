@@ -1,3 +1,25 @@
+# Scoly 5.2.1
+
+## 5.2.1 — Profile and French interface fixes
+
+- Fixed PRONOTE student-picture downloads by using the mobile session cookie and request identity expected by external PRONOTE files, with binary image-type detection.
+- Restored manual editing for linked-profile names, classes, schools and pictures; local choices remain separate from synchronized source information.
+- A normal profile tap opens the account chooser while a triple-tap opens the profile editor again.
+- Stabilized French translation by batching dynamic translations and preventing the observer from translating its own mutations or protected user data.
+- Updated Android to version **5.2.1**, `versionCode 82`.
+
+# Scoly 5.2.0
+
+## 5.2.0 — Personal Todo and homework continuity
+
+- Added a Scoly-only personal Todo page, kept completely unavailable from PROnote Classic.
+- Personal tasks support due dates, subjects, priorities, completion and optional Android reminders.
+- Added Todo previews to the Scoly Homepage and notification deep links back to the relevant task.
+- PRONOTE homework can now be marked finished even while automatic synchronization is enabled.
+- Homework refresh now merges existing items by their PRONOTE identity and content instead of deleting everything, preventing duplicates and preserving each local completion state.
+- Fixed profile-information synchronization so authenticated PRONOTE student pictures are downloaded with the expected mobile request identity and an older saved picture is retained if a refresh fails.
+- Updated Android to version **5.2.0**, `versionCode 81`.
+
 # Scoly 5.1.10
 
 ## 5.1.10 — Cafeteria reminders and linked profiles
