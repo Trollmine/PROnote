@@ -1,3 +1,126 @@
+# Scoly 5.1.10
+
+## 5.1.10 — Cafeteria reminders and linked profiles
+
+- Added an optional 8:00 notification on ALISE days that are actually reservable and still need a reservation, with a direct link to the cafeteria account.
+- Added PRONOTE account-type detection and native Pawnote child-resource switching for parent accounts.
+- Added the Scoly account chooser from the header, with every linked child/student profile plus a preserved custom local account.
+- The drawer’s Multiple accounts action is enabled only for linked parent accounts with multiple children and remains clearly unavailable otherwise.
+- Added profile-information synchronization for the student name, picture, class and school, alongside the existing synchronization categories.
+- Linked profile data synchronizes in its own local slot so switching back to the custom account restores its existing data and settings.
+- Updated Android to version **5.1.10**, `versionCode 80`.
+
+# Scoly 5.1.9
+
+## 5.1.9 — Complete multi-child ALISE loading
+
+- Fixed secondary ALISE children appearing without a balance or reservation availability.
+- When ALISE does not publish a direct profile URL, Scoly now operates the official child dropdown off-screen and reuses the resulting authenticated session.
+- Every child profile is verified after switching before its balance, activity and reservation calendar are merged into the native interface.
+- The same verified switching path is reused for per-child reservation and cancellation actions.
+- Updated Android to version **5.1.9**, `versionCode 79`.
+
+# Scoly 5.1.8
+
+## 5.1.8 — Reliable ALISE dashboard handoff
+
+- Fixed the ENT sign-in handoff so any valid authenticated ALISE client page closes automatically and returns to Scoly’s native interface.
+- ALISE sessions are now validated from the real family dashboard instead of relying on the separate information page.
+- Added direct parsing for ALISE’s child-profile dropdown, including its selected child and available profile-switch links.
+- Added a safe current-child fallback when an ALISE installation omits switch links instead of rejecting otherwise usable account data.
+- Updated Android to version **5.1.8**, `versionCode 78`.
+
+# Scoly 5.1.7
+
+## 5.1.7 — True per-child ALISE profiles
+
+- Replaced the shared family reservation approximation with ALISE’s real child-profile switching flow.
+- Each child now displays the balance returned by their own ALISE profile.
+- Reservation calendars are loaded and merged per child, so selecting another child immediately shows that child’s real reserved days.
+- Removed the artificial Update action: selections with any existing reservation show Cancel; selections with none show Reserve.
+- Mixed selections cancel the existing reservations of every selected child while leaving already-unreserved children unchanged.
+- Reservation and cancellation requests are issued and verified separately for every selected child.
+- Fixed the one-day calendar offset that produced Sundays and hid Fridays.
+- Updated Android to version **5.1.7**, `versionCode 77`.
+
+# Scoly 5.1.6
+
+## 5.1.6 — Reliable family reservation states
+
+- Fixed the ALISE account header parser so the establishment no longer contains the parent menu, address, children and balance.
+- Restored balance extraction from ALISE’s rendered `Solde au … : … €` text when its malformed legacy markup defeats the normal field parser.
+- Child selection now refreshes every reservation row immediately.
+- Added full, partial, other-child and unknown-child reservation states for family accounts.
+- Persisted the selected-child assignment locally while keeping ALISE’s server-side meal quantity authoritative.
+- Changing the number of selected children now updates the ALISE reservation quantity, with rollback if the replacement reservation fails.
+- Updated Android to version **5.1.6**, `versionCode 76`.
+
+# Scoly 5.1.5
+
+## 5.1.5 — Family ALISE reservations
+
+- Added a parent-session child selector so one child or all linked children can be included in a meal reservation.
+- Reservation quantities now match the number of selected children while cancellations continue to clear the existing reservation for that date.
+- Replaced encrypted ALISE reservation tokens with the actual meal dates returned by the reservation calendar.
+- Fixed balances and account activity to always display in euros, including when Scoly is using English.
+- Cleaned up ALISE parent-account parsing so the establishment, parent and children are shown separately and French HTML entities render correctly.
+- Updated Android to version **5.1.5**, `versionCode 75`.
+
+# Scoly 5.1.4
+
+## 5.1.4 — Correct ENT-delegated ALISE connection
+
+- Replaced the incorrect ALISE username/password form with the school’s real ENT → CAS/EduConnect → ALISE activation flow (`USER_5`).
+- The official authentication page is shown only while signing in; Scoly captures the resulting ALISE session and returns to the native balance, activity and reservation interface.
+- Scoly never reads or stores the ENT password. Persistent WebView cookies allow the official ENT session to renew ALISE access when still valid.
+- Removed the obsolete encrypted ALISE credential payload from upgraded installations while preserving all unrelated Scoly, PRONOTE and timetable data.
+- Fixed the ALISE loading-state guard that could prevent the first native dashboard request from starting.
+- Updated Android to version **5.1.4**, `versionCode 74`.
+
+# Scoly 5.1.3
+
+## 5.1.3 — Native ALISE accounts and reservations
+
+- Replaced the session-expiring ALISE WebView with a native Scoly account screen instead of opening `aliIndexClient.php` without its required delegated session.
+- Added one-time ALISE account linking using the school site ID, username and password; saved credentials are encrypted with Android Keystore and temporary PHP sessions renew automatically.
+- Added native balance, upcoming reservation and recent account-operation views with dedicated Scoly Light/Dark and PROnote Classic presentations.
+- Restored direct meal reservation and cancellation support through ALISE's existing reservation flow, including explicit confirmation and a fresh server read before Scoly reports success.
+- Kept ALISE network/parsing work off the UI thread, blocked duplicate actions and retained the previous dashboard while a manual refresh fails.
+- Updated Android to version **5.1.3**, `versionCode 73`.
+
+# Scoly 5.1.2
+
+## 5.1.2 — In-app ALISE
+
+- Added a dedicated ALISE entry to the app's right-side tabs menu and changed cafeteria reservation actions to stay inside Scoly instead of opening the external browser.
+- Added an isolated in-app ALISE browser with responsive controls, safe HTTPS navigation, cookie/session support, downloads, back/reload/close controls and clean connection errors.
+- Restyled the official ALISE pages without replacing their forms or payment flow: Scoly uses coral/violet rounded light or dark styling, while PROnote Classic uses its familiar green, compact presentation.
+- Kept ALISE credentials, reservations and payments inside the official ALISE WebView; Scoly exposes no JavaScript bridge to the page and does not read form values.
+- Preserved each user's configured school portal URL, including the Ferdinand Buisson delegated ALISE address.
+- Updated Android to version **5.1.2**, `versionCode 72`.
+
+# Scoly 5.1.1
+
+## 5.1.1 — Communication and notification reliability
+
+- Fixed Communication synchronization being aborted by one failed discussion-detail request; list/news requests now retry with a renewed session and unavailable thread details preserve their previous cached content.
+- Fixed timetable-change notifications comparing unstable PRONOTE course IDs. They now compare the old and new upcoming schedules and count additions, removals or modifications once.
+- Changed the default Ferdinand Buisson cafeteria reservation destination to the direct ALISE web-parent portal.
+- Added spacing between the linked-account card and synchronization error/status card.
+- Reduced the Secret options safety delay from two seconds to half a second.
+- Updated Android to version **5.1.1**, `versionCode 71`.
+
+# Scoly 5.1.0
+
+## 5.1.0 — Cafeteria access and navigation reliability
+
+- Added a direct, configurable link to each school’s official cafeteria/ALISE reservation portal from the Menu page and the detailed cafeteria view.
+- Kept meal reservations on the school portal: Scoly does not invent an undocumented ALISE API, store portal credentials or require a new paid backend.
+- Preserved the existing PRONOTE/PDF menu synchronization and offline cache, including imported school menu PDFs.
+- Fixed the drawer hiding Homepage before a real destination opened; submenu controls and unavailable entries no longer leave a blank page.
+- Made Timetable, Homework and Student Administration explicitly switch views so their drawer navigation remains reliable.
+- Updated Android to version **5.1.0**, `versionCode 70`.
+
 # Scoly 5.0.5
 
 ## 5.0.5 — Secret options and synchronization polish
